@@ -1,0 +1,3 @@
+const range=document.querySelector('.compare input');
+range.addEventListener('input',()=>{const n=Number(range.value);range.closest('.compare').style.setProperty('--split',n+'%');range.setAttribute('aria-valuetext',`До ${n}%, после ${100-n}%`)});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver'in window){document.documentElement.classList.add('motion');const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e))}
